@@ -1,0 +1,128 @@
+.main_layout{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.game_container{
+    width: 400px;
+    background-color: #edf5e1;
+    align-self: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    border-radius: 3px;
+    border-right: 1px solid #000000c5;
+    border-bottom: 1px solid #000000c5;
+    overflow: hidden;
+}
+
+.game_container button{
+    cursor: pointer;
+    background-color: #446277;
+    color: #ffffff;
+    border-radius: 2px;
+    border-top: 1px solid rgba(0,0,0,0.0);
+    border-right: 1px solid #000000c5;
+    border-bottom: 1px solid #000000c5;
+    border-left: 1px solid rgba(0,0,0,0.0);
+}
+
+.game_container button:disabled,
+.game_container button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
+}
+
+.game_container button:enabled:active{
+    background-color: #6f9cbd;
+    border-top: 1px solid #000000c5;
+    border-right: 1px solid rgba(0,0,0,0.0);
+    border-bottom: 1px solid rgba(0,0,0,0.0);
+    border-left: 1px solid #000000c5;
+}
+
+.game_container div:nth-child(1){
+    padding: 0 0 5px 0;
+}
+
+.game_container div, input, button{
+    font-size: 120%;
+}
+
+.game_container .top, .game_container .middle, .game_container .bottom{
+    display: flex;
+    flex-direction: row;
+}
+
+.game_container .top{
+    justify-content: space-between;
+}
+
+.top .current_number{
+    color: #446277;    
+    text-shadow: 2px 2px 2px #44627763;
+}
+
+.top .game_timer{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #000000c5;
+    border-left: 1px solid #000000c5;
+    border-radius: 2px;
+}
+
+.game_container .middle{
+    justify-content: center;
+}
+
+.middle button{
+    padding: 5px 10px;
+}
+
+.middle button:nth-child(1), .middle button:nth-child(2){
+    margin: 0 40px 0 0;
+}
+
+
+.game_container .bottom{
+    justify-content: center;    
+    padding-top: 10px;
+}
+
+.bottom div{
+    font-size: 100%;
+    padding-right: 0px;
+}
+.bottom div:nth-child(1){
+    margin-right: 40px;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.pulse{
+    animation: pulse 1s infinite;
+}
+
+
+@keyframes pulse {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.3);
+      opacity: .1;
+    }
+  }

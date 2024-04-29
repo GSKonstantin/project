@@ -1,0 +1,40 @@
+<div class="main_layout">
+
+    <div class="game_container">
+
+        <div class="top">
+            <button (click)="start_game()" [disabled]="start">Старт</button>
+            
+            <div class="current_number" [ngClass]="{show: start, hide: !start}">
+                {{scores.current_number}}
+            </div>
+
+            <div class="game_timer">
+                <span [ngClass]="{pulse: start && timers.global_count <= 10}">
+                    {{timers.global_count}}
+                </span>
+            </div>
+        </div>
+        
+        <div class="middle">
+
+            <button *ngFor="let item of [].constructor(in_game_total); let i = index" (click)="select_number(i + 1)" [disabled]="!start">{{i + 1}}</button>
+
+        </div>
+
+        <div class="bottom">
+
+            <div>
+                <!-- ✓ -->
+                Пр.: <span>{{scores.win}}</span>
+            </div>
+
+            <div>
+                Непр.: <span>{{scores.loose}}</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
